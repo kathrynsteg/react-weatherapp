@@ -4,16 +4,18 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      city: response.data.name,
-      date: "Wednesday noon",
-      description: response.data.weather[0].description,
-      iconUrl: "#",
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
+      city: response.data.city,
+      date: new Date(response.data.time * 1000),
+      description: response.data.condition.description,
+      iconUrl: response.data.condition.icon,
+      temperature: response.data.temperature.current,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
     });
   }
@@ -72,8 +74,8 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "b47fdf6445cd8b64ab889be77dbe56d4";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&unit=imperial`;
+    const apiKey = "15aa7ff71012241631cb1665815teob0";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
