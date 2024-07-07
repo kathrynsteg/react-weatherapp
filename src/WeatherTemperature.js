@@ -13,7 +13,7 @@ export default function WeatherTemperature(props) {
   }
 
   function celsius() {
-    return (props.imperial * 5) / 9 - 32;
+    return ((props.imperial - 32) * 5) / 9;
   }
 
   if (unit === "imperial") {
