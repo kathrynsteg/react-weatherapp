@@ -1,3 +1,7 @@
+body {
+  background: #f36a62dd;
+}
+
 .App {
   max-width: 600px;
   margin: 30px auto;
@@ -5,5 +9,15 @@
 
 .App footer {
   font-size: 11px;
+  font-weight: 500;
+  font-style: italic;
   margin: 10px 0;
+  text-align: center;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.App a {
+  text-decoration: none;
+  color: #851a37;
 }
