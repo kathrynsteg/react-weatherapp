@@ -10,13 +10,13 @@
   color: #851a37;
   font-size: 36px;
   font-weight: 400;
-  margin: 20px 0 10px 0;
+  margin: 18px 16px 10px;
   line-height: 30px;
 }
 
 .Weather ul {
-  margin: 0;
-  padding: 0;
+  margin: 8px;
+  padding-left: 16px;
 }
 
 .Weather li {
@@ -28,8 +28,7 @@
 }
 
 .Weather canvas {
-  margin-right: 10px;
-  margin-top: 5px;
+  margin: 5px 10px;
   display: inline-block;
 }
 
